@@ -1,0 +1,6 @@
+@group_12_ahmed_yu__GroupProject_HostAddress = http://localhost:5297
+
+GET {{group_12_ahmed_yu__GroupProject_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
