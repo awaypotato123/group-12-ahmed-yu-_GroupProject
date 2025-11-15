@@ -35,3 +35,38 @@ SELECT * FROM Patients;
 GO
 
 SELECT COUNT(*) AS TotalPatients FROM Patients;
+
+
+
+CREATE TABLE Doctors (
+    DoctorId INT PRIMARY KEY IDENTITY(1,1),
+    FirstName NVARCHAR(100) NOT NULL,
+    LastName NVARCHAR(100) NOT NULL,
+    Email NVARCHAR(255) NOT NULL UNIQUE,
+    PhoneNumber NVARCHAR(20) NOT NULL,
+    Specialization NVARCHAR(100) NOT NULL,
+    LicenseNumber NVARCHAR(50) NOT NULL UNIQUE,
+    ConsultationFee DECIMAL(10,2) NOT NULL,
+    CreatedAt DATETIME2 NOT NULL DEFAULT GETDATE()
+);
+GO
+
+
+INSERT INTO Doctors (FirstName, LastName, Email, PhoneNumber, Specialization, LicenseNumber, ConsultationFee, CreatedAt)
+VALUES
+('Sarah', 'Johnson', 'dr.johnson@clinic.com', '555-1001', 'Cardiology', 'LIC12345', 200.00, GETDATE()),
+('Robert', 'Chen', 'dr.chen@clinic.com', '555-1002', 'Pediatrics', 'LIC12346', 150.00, GETDATE()),
+('Emily', 'Williams', 'dr.williams@clinic.com', '555-1003', 'Dermatology', 'LIC12347', 175.00, GETDATE()),
+('Ahmed', 'Hassan', 'dr.hassan@clinic.com', '555-1004', 'Orthopedics', 'LIC12348', 225.00, GETDATE()),
+('Maria', 'Rodriguez', 'dr.rodriguez@clinic.com', '555-1005', 'General Practice', 'LIC12349', 125.00, GETDATE()),
+('James', 'Lee', 'dr.lee@clinic.com', '555-1006', 'Neurology', 'LIC12350', 250.00, GETDATE()),
+('Lisa', 'Patel', 'dr.patel@clinic.com', '555-1007', 'Ophthalmology', 'LIC12351', 180.00, GETDATE()),
+('David', 'Kim', 'dr.kim@clinic.com', '555-1008', 'Psychiatry', 'LIC12352', 200.00, GETDATE()),
+('Anna', 'Ivanova', 'dr.ivanova@clinic.com', '555-1009', 'Endocrinology', 'LIC12353', 210.00, GETDATE()),
+('Michael', 'O''Connor', 'dr.oconnor@clinic.com', '555-1010', 'Family Medicine', 'LIC12354', 140.00, GETDATE());
+GO
+
+
+SELECT COUNT(*) AS TotalDoctors FROM Doctors;
+SELECT * FROM Doctors;
+GO
