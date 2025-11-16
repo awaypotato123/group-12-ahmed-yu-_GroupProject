@@ -70,3 +70,32 @@ GO
 SELECT COUNT(*) AS TotalDoctors FROM Doctors;
 SELECT * FROM Doctors;
 GO
+
+
+INSERT INTO Appointments (PatientId, DoctorId, AppointmentDate, AppointmentTime, Status, ReasonForVisit, Notes, CreatedAt, UpdatedAt)
+VALUES
+
+(1, 1, '2025-11-20', '09:00:00', 'Confirmed', 'Annual heart checkup', 'Patient has history of high blood pressure', GETDATE(), GETDATE()),
+(2, 2, '2025-11-20', '10:00:00', 'Pending', 'Child vaccination', 'Schedule for MMR vaccine', GETDATE(), GETDATE()),
+(3, 3, '2025-11-21', '14:00:00', 'Confirmed', 'Skin rash examination', 'Rash on arms and legs', GETDATE(), GETDATE()),
+(4, 4, '2025-11-22', '11:00:00', 'Confirmed', 'Knee injury follow-up', 'Post-surgery checkup', GETDATE(), GETDATE()),
+(5, 5, '2025-11-23', '15:00:00', 'Pending', 'General checkup', 'First visit to clinic', GETDATE(), GETDATE()),
+
+
+(1, 1, '2025-11-10', '09:00:00', 'Completed', 'Blood pressure check', 'BP normal, continue medication', GETDATE(), GETDATE()),
+(2, 2, '2025-11-11', '10:30:00', 'Completed', 'Flu symptoms', 'Prescribed rest and fluids', GETDATE(), GETDATE()),
+(6, 6, '2025-11-12', '13:00:00', 'NoShow', 'Headache consultation', 'Patient did not show up', GETDATE(), GETDATE()),
+(7, 7, '2025-11-13', '16:00:00', 'Completed', 'Eye examination', 'Prescribed reading glasses', GETDATE(), GETDATE()),
+(3, 3, '2025-11-14', '09:30:00', 'Cancelled', 'Acne treatment', 'Patient cancelled, needs to reschedule', GETDATE(), GETDATE()),
+
+
+(8, 8, '2025-11-25', '10:00:00', 'Confirmed', 'Anxiety consultation', 'Initial therapy session', GETDATE(), GETDATE()),
+(9, 9, '2025-11-26', '14:30:00', 'Pending', 'Diabetes management', 'Blood sugar monitoring', GETDATE(), GETDATE()),
+(10, 10, '2025-11-27', '11:00:00', 'Confirmed', 'Family health checkup', 'Annual wellness visit', GETDATE(), GETDATE()),
+(4, 1, '2025-11-28', '15:00:00', 'Pending', 'Chest pain', 'Urgent consultation needed', GETDATE(), GETDATE()),
+(5, 2, '2025-11-29', '09:00:00', 'Confirmed', 'Child wellness checkup', '6-month checkup', GETDATE(), GETDATE());
+
+-- Verify insertion
+SELECT COUNT(*) AS TotalAppointments FROM Appointments;
+SELECT * FROM Appointments ORDER BY AppointmentDate, AppointmentTime;
+GO
