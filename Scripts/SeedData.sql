@@ -72,6 +72,10 @@ SELECT * FROM Doctors;
 GO
 
 
+
+
+
+
 INSERT INTO Appointments (PatientId, DoctorId, AppointmentDate, AppointmentTime, Status, ReasonForVisit, Notes, CreatedAt, UpdatedAt)
 VALUES
 
@@ -94,8 +98,14 @@ VALUES
 (10, 10, '2025-11-27', '11:00:00', 'Confirmed', 'Family health checkup', 'Annual wellness visit', GETDATE(), GETDATE()),
 (4, 1, '2025-11-28', '15:00:00', 'Pending', 'Chest pain', 'Urgent consultation needed', GETDATE(), GETDATE()),
 (5, 2, '2025-11-29', '09:00:00', 'Confirmed', 'Child wellness checkup', '6-month checkup', GETDATE(), GETDATE());
+GO
 
--- Verify insertion
+
 SELECT COUNT(*) AS TotalAppointments FROM Appointments;
 SELECT * FROM Appointments ORDER BY AppointmentDate, AppointmentTime;
 GO
+
+SELECT Status, COUNT(*) AS Count
+FROM Appointments
+GROUP BY Status
+ORDER BY Count DESC;

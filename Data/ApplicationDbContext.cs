@@ -21,6 +21,19 @@ namespace group_12_ahmed_yu__GroupProject.Data
                 .Property(d => d.ConsultationFee)
                 .HasColumnType("decimal(18,2)");
 
+            modelBuilder.Entity<Appointment>()
+                .HasOne(a => a.Patient)
+                .WithMany()
+                .HasForeignKey(a => a.PatientId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Appointment>()
+                .HasOne(a => a.Doctor)
+                .WithMany()
+                .HasForeignKey(a => a.DoctorId)
+                .OnDelete(DeleteBehavior.Restrict);
+
         }
-    }
+        public DbSet<group_12_ahmed_yu__GroupProject.Models.Appointment> Appointments { get; set; }
+        }
 }
