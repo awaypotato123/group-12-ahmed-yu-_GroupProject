@@ -113,9 +113,14 @@ ORDER BY Count DESC;
 
 
 
--- Count rows in all tables (with explicit cast)
+
 SELECT 'Patients' AS TableName, CAST(COUNT(*) AS INT) AS [RowCount] FROM Patients
 UNION ALL
 SELECT 'Doctors' AS TableName, CAST(COUNT(*) AS INT) AS [RowCount] FROM Doctors
 UNION ALL
 SELECT 'Appointments' AS TableName, CAST(COUNT(*) AS INT) AS [RowCount] FROM Appointments;
+
+
+UPDATE Appointments 
+SET Status = 'Pending'
+WHERE AppointmentId = 17;
