@@ -124,3 +124,16 @@ SELECT 'Appointments' AS TableName, CAST(COUNT(*) AS INT) AS [RowCount] FROM App
 UPDATE Appointments 
 SET Status = 'Pending'
 WHERE AppointmentId = 17;
+
+
+USE HealthcareDB;
+GO
+
+
+SELECT 'PATIENTS' AS TableType, * FROM Patients ORDER BY PatientId;
+
+
+SELECT 'DOCTORS' AS TableType, * FROM Doctors ORDER BY DoctorId;
+
+
+SELECT 'APPOINTMENTS' AS TableType, * FROM Appointments ORDER BY AppointmentId;
