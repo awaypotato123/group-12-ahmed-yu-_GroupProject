@@ -40,8 +40,8 @@ namespace group_12_ahmed_yu__GroupProject.Models
         public required string MedicalRecordNumber { get; set; }
 
         [Required]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public DateTime CreatedAt { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
 
         [Required]
         public bool IsActive { get; set; } = true;

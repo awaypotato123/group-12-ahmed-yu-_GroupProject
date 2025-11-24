@@ -172,6 +172,12 @@ namespace group_12_ahmed_yu__GroupProject.Controllers
                 patient.DateOfBirth = patchPatientDto.DateOfBirth.Value;
             }
 
+            if (!string.IsNullOrWhiteSpace(patchPatientDto.MedicalRecordNumber))
+            {
+                patient.MedicalRecordNumber = patchPatientDto.MedicalRecordNumber;
+            }
+
+
             _context.Entry(patient).State = EntityState.Modified;
             await _context.SaveChangesAsync();
 
