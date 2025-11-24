@@ -10,6 +10,7 @@
         public DateTime DateOfBirth { get; set; }
         public required string Address { get; set; }
         public string MedicalRecordNumber { get; set; }
+        public DateTime Created { get; set; }
 
 
 

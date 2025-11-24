@@ -10,6 +10,6 @@
         public required string Specialization { get; set; }
         public required string LicenseNumber { get; set; }
         public decimal ConsultationFee { get; set; }
-        public DateTime CreatedAt { get; set; }
+        public DateTime Created { get; set; }
     }
 }

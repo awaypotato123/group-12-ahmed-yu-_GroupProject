@@ -7,7 +7,8 @@ namespace group_12_ahmed_yu__GroupProject.Profiles
     {
         public PatientProfile()
         {
-            CreateMap<Models.Patient, dto.PatientDto>();
+            CreateMap<Models.Patient, dto.PatientDto>()
+                 .ForMember(dest => dest.Created, opt => opt.MapFrom(src => src.CreatedAt));
             //Create PatientDto to Patient(for POST)
             CreateMap<CreatePatientDto, Patient>()
                 .ForMember(dest => dest.PatientId, opt => opt.Ignore())
